@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Implementation Notes — Index</title>
+<style>
+  body { font: 14px/1.5 -apple-system, system-ui, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ddd; padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; position: sticky; top: 0; }
+  .blast-low { color: #2a7a2a; }
+  .status-in-progress { color: #b85c00; }
+  .status-shipped { color: #2a7a2a; }
+</style>
+</head>
+<body>
+<h1>Implementation Notes — Index</h1>
+<table>
+  <thead><tr><th>Date</th><th>Task</th><th>Status</th><th>Blast</th><th>Tags</th><th>Summary</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>2026-07-08</td>
+      <td><a href="2026-07-08-living-subdomain-index.html">Living subdomain index</a></td>
+      <td class="status-shipped">shipped</td>
+      <td class="blast-low">low</td>
+      <td>static-site, dns, automation</td>
+      <td>Static homepage reads <code>data/subdomains.json</code>; GitHub Actions refreshes it daily.</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+</html>

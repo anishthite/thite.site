@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spec — Living subdomain index</title>
+<meta name="task" content="Turn thite.site into a living index of app subdomains">
+<meta name="date-started" content="2026-07-08">
+<meta name="date-updated" content="2026-07-08">
+<meta name="status" content="shipped">
+<meta name="blast-radius" content="low">
+<meta name="tags" content="static-site,dns,automation">
+<meta name="related" content="">
+<style>
+  body { font: 14px/1.45 -apple-system, system-ui, sans-serif; max-width: 880px; margin: 1.5rem auto; padding: 0 1rem; color: #111; }
+  h1 { font-size: 20px; margin: 0 0 .25rem; }
+  h2 { font-size: 15px; margin: 1.4rem 0 .4rem; border-bottom: 1px solid #ddd; padding-bottom: .2rem; }
+  table { border-collapse: collapse; width: 100%; margin: .4rem 0 .8rem; }
+  th, td { border: 1px solid #ddd; padding: 4px 8px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; font-weight: 600; }
+  code { background: #f1f1f1; padding: 1px 4px; border-radius: 3px; font-size: 12.5px; }
+  .meta { color: #555; font-size: 12.5px; margin-bottom: .8rem; }
+  .kv { display: grid; grid-template-columns: 140px 1fr; gap: 2px 14px; font-size: 13px; margin: .4rem 0 1rem; }
+  .kv b { color: #444; font-weight: 600; }
+  .blast-low { color: #2a7a2a; }
+</style>
+</head>
+<body>
+<h1>Living subdomain index</h1>
+<p class="meta"><code>main</code> · worktree <code>/Users/anishthite/workspace/thite.site</code> · 2026-07-08 · status <b>shipped</b> · blast <span class="blast-low">low</span></p>
+<h2>Summary</h2>
+<div class="kv">
+  <b>Goal</b><div>Ship a white, space-font index at <code>/</code> listing discovered <code>thite.site</code> app subdomains.</div>
+  <b>Source</b><div><code>scripts/scan_subdomains.py</code> queries certificate transparency and HTTP metadata.</div>
+  <b>Surface</b><div><code>index.html</code>, <code>data/subdomains.json</code>, daily <code>.github/workflows/scan-subdomains.yml</code>.</div>
+  <b>Schema</b><div>Static JSON only; no database.</div>
+  <b>Mobile</b><div>Responsive card grid.</div>
+  <b>Open Qs</b><div>0.</div>
+</div>
+<h2>Algorithm</h2>
+<ol>
+  <li>Fetch <code>https://crt.sh/?q=%25.thite.site&amp;output=json</code>.</li>
+  <li>Normalize names to lowercase, remove wildcards, keep <code>thite.site</code> and subdomains.</li>
+  <li>Probe <code>https://host</code> then <code>http://host</code> for status, title, and description.</li>
+  <li>Write sorted rows to <code>data/subdomains.json</code> with scan timestamps and source errors.</li>
+</ol>
+<h2>UI layout</h2>
+<ol>
+  <li><b>Hero</b>: title, daily-scan status, and last refresh time.</li>
+  <li><b>Controls</b>: client-side search and status filter.</li>
+  <li><b>Cards</b>: host, title, status, protocol, description, and discovered source.</li>
+</ol>
+<h2>Files</h2>
+<table>
+  <tr><th>Path</th><th>Kind</th><th>Delta</th></tr>
+  <tr><td><code>index.html</code></td><td>new</td><td>Static app index UI.</td></tr>
+  <tr><td><code>data/subdomains.json</code></td><td>new</td><td>Seeded scan output consumed by the page.</td></tr>
+  <tr><td><code>scripts/scan_subdomains.py</code></td><td>new</td><td>Stdlib scanner for daily refreshes.</td></tr>
+  <tr><td><code>.github/workflows/scan-subdomains.yml</code></td><td>new</td><td>Daily cron and manual refresh workflow.</td></tr>
+  <tr><td><code>README.md</code></td><td>touch</td><td>Document local scan and static serving.</td></tr>
+</table>
+<h2>Decisions</h2>
+<table>
+  <tr><th>ID</th><th>Choice · Rationale</th></tr>
+  <tr><td>D-001</td><td>Use static HTML plus JSON. Empty repo and daily freshness do not need a framework.</td></tr>
+  <tr><td>D-002</td><td>Use certificate transparency as discovery source. It finds public app subdomains without credentials.</td></tr>
+</table>
+<h2>Tradeoffs</h2>
+<table>
+  <tr><th>ID</th><th>Picked over Rejected · Reason</th></tr>
+  <tr><td>T-001</td><td><code>urllib</code> scanner over dependency CLI. Stdlib keeps the repo deployable anywhere.</td></tr>
+  <tr><td>T-002</td><td>Daily commit workflow over runtime scanning. Static hosts can serve the page without server code.</td></tr>
+</table>
+<h2>Assumptions</h2>
+<ul>
+  <li>A-001 · Public app subdomains have certificates. If wrong: add manual seeds.</li>
+  <li>A-002 · The default branch deploys through GitHub Pages, Vercel, or similar static hosting. If wrong: wire the existing host later.</li>
+</ul>
+<h2>Reversibility</h2>
+<p>R-001 · <span class="blast-low">low</span>. Delete static files and workflow, or revert the commit.</p>
+<h2>Definition of done</h2>
+<ul>
+  <li><code>python3 scripts/scan_subdomains.py --domain thite.site --output data/subdomains.json</code> writes JSON.</li>
+  <li><code>python3 -m http.server</code> can serve <code>index.html</code> without build tooling.</li>
+  <li>Changes are committed and pushed to <code>origin/main</code>.</li>
+</ul>
+</body>
+</html>
