@@ -107,6 +107,19 @@ def discover_hosts(domain: str, timeout: int) -> tuple[dict[str, set[str]], list
     return {}, errors
 
 
+def parse_manual_hosts(text: str, domain: str) -> dict[str, set[str]]:
+    hosts: dict[str, set[str]] = {}
+    for line in text.splitlines():
+        host = clean_host(line.split("#", 1)[0], domain)
+        if host:
+            hosts.setdefault(host, set()).add("manual")
+    return hosts
+
+
+def read_manual_hosts(path: Path, domain: str) -> dict[str, set[str]]:
+    return parse_manual_hosts(path.read_text(), domain) if path.exists() else {}
+
+
 def resolve_ips(host: str) -> list[str]:
     try:
         infos = socket.getaddrinfo(host, 443, proto=socket.IPPROTO_TCP)
@@ -134,7 +147,8 @@ def request_url(url: str, timeout: int) -> tuple[int, str, bytes, str]:
 def classify(status: int, final_url: str) -> str:
     if status in {401, 403} or "cloudflareaccess.com" in final_url:
         return "protected"
-    if 200 <= status < 500:
+    # ponytail: LinkedIn returns non-standard 999 after valid redirects; add a state if more bot walls matter.
+    if 200 <= status < 500 or status == 999:
         return "online"
     return "offline"
 
@@ -197,12 +211,20 @@ def sort_key(host: str, domain: str) -> tuple[int, str]:
     return (0 if host == domain else 1, host)
 
 
-def scan(domain: str, output: Path, timeout: int, workers: int) -> dict[str, Any]:
+def scan(domain: str, output: Path, manual_hosts_path: Path, timeout: int, workers: int) -> dict[str, Any]:
     generated_at = now_iso()
     discovered, errors = discover_hosts(domain, timeout)
     if not discovered:
-        discovered = existing_hosts(output, domain) or {domain: {"seed"}}
-        errors.append("using previous scan or root-domain seed")
+        discovered = existing_hosts(output, domain)
+        if discovered:
+            errors.append("using previous scan")
+
+    for host, sources in read_manual_hosts(manual_hosts_path, domain).items():
+        discovered.setdefault(host, set()).update(sources)
+
+    if not discovered:
+        discovered = {domain: {"seed"}}
+        errors.append("using root-domain seed")
 
     hosts = sorted(discovered, key=lambda host: sort_key(host, domain))
     with concurrent.futures.ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
@@ -225,12 +247,15 @@ def self_test() -> None:
     assert classify(403, "https://example.com") == "protected"
     assert classify(200, "https://x.cloudflareaccess.com/login") == "protected"
     assert classify(502, "https://example.com") == "offline"
+    assert classify(999, "https://www.linkedin.com/in/example") == "online"
+    assert parse_manual_hosts("#x\nAnish.Thite.Site.\nnope.example\n", "thite.site") == {"anish.thite.site": {"manual"}}
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--domain", default="thite.site")
     parser.add_argument("--output", default="data/subdomains.json", type=Path)
+    parser.add_argument("--manual-hosts", default="data/manual-hosts.txt", type=Path)
     parser.add_argument("--timeout", default=8, type=int)
     parser.add_argument("--workers", default=8, type=int)
     parser.add_argument("--self-test", action="store_true")
@@ -241,7 +266,7 @@ def main() -> int:
         print("self-test ok")
         return 0
 
-    data = scan(args.domain, args.output, args.timeout, args.workers)
+    data = scan(args.domain, args.output, args.manual_hosts, args.timeout, args.workers)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(data, indent=2, sort_keys=True) + "\n")
     print(f"wrote {data['count']} hosts to {args.output}")
