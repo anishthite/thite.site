@@ -3,241 +3,119 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>thite.site — app index</title>
-  <meta name="description" content="A living index of the apps and subdomains on thite.site.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>thite.site</title>
+  <meta name="description" content="Apps on thite.site.">
+  <link rel="icon" href="data:,">
   <style>
     :root {
       color-scheme: light;
-      --ink: #121212;
-      --muted: #6f6f73;
-      --line: #e7e4dd;
-      --paper: #ffffff;
-      --wash: #f7f5ef;
-      --accent: #1414ff;
-      --good: #0f7a3b;
-      --warn: #9b5b00;
-      --bad: #a02a2a;
+      --ink: #253142;
+      --muted: #737d8c;
+      --paper: #fff;
+      --field: #fff;
+      --line: #d7dee8;
+      --soft: #edf1f5;
+      --online: #3d7f79;
+      --protected: #6878a8;
+      --offline: #858d99;
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at top left, rgba(20, 20, 255, 0.08), transparent 28rem),
-        linear-gradient(180deg, #fff 0%, var(--wash) 100%);
+      background: var(--field);
       color: var(--ink);
-      font: 16px/1.5 "Space Grotesk", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
     }
 
     a { color: inherit; text-decoration: none; }
 
-    main {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 56px 0;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      gap: 8px;
-      align-items: center;
-      padding: 6px 10px;
+    .frame {
+      width: min(1180px, calc(100% - 24px));
+      margin: 18px auto;
       border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.78);
-      color: var(--muted);
-      font-size: 13px;
+      background: var(--paper);
     }
 
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--good);
-      box-shadow: 0 0 0 4px rgba(15, 122, 59, 0.1);
+    .hero,
+    .app { padding-inline: clamp(12px, 2vw, 24px); }
+
+    .hero {
+      padding-block: 14px;
+      border-bottom: 1px solid var(--soft);
     }
 
     h1 {
-      max-width: 780px;
-      margin: 26px 0 14px;
-      font-size: clamp(44px, 8vw, 94px);
-      line-height: 0.92;
-      letter-spacing: -0.08em;
-    }
-
-    .lede {
-      max-width: 680px;
       margin: 0;
-      color: var(--muted);
-      font-size: clamp(18px, 2.4vw, 22px);
-    }
-
-    .bar {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 12px;
-      margin: 38px 0 20px;
-    }
-
-    input,
-    select {
-      min-height: 48px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.86);
-      color: var(--ink);
-      font: inherit;
-      outline: none;
-    }
-
-    input { width: 100%; padding: 0 16px; }
-    select { padding: 0 42px 0 14px; }
-    input:focus,
-    select:focus { border-color: var(--accent); box-shadow: 0 0 0 4px rgba(20, 20, 255, 0.08); }
-
-    .meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px 18px;
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 14px;
-    }
-
-    .card {
-      min-height: 220px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid var(--line);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.82);
-      padding: 18px;
-      box-shadow: 0 18px 50px rgba(36, 31, 20, 0.07);
-      transition: transform 160ms ease, border-color 160ms ease;
-    }
-
-    .card:hover { transform: translateY(-2px); border-color: #cfc8ba; }
-
-    .topline,
-    .foot {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .host {
-      margin: 18px 0 8px;
-      font-size: 26px;
-      line-height: 1;
-      letter-spacing: -0.04em;
-      overflow-wrap: anywhere;
-    }
-
-    .desc {
-      margin: 0 0 22px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .pill {
-      flex: 0 0 auto;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: #f1f0ea;
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 700;
+      font-size: 18px;
+      line-height: 1.15;
+      letter-spacing: .02em;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
     }
 
-    .pill.online { background: rgba(15, 122, 59, 0.1); color: var(--good); }
-    .pill.protected { background: rgba(155, 91, 0, 0.1); color: var(--warn); }
-    .pill.offline { background: rgba(160, 42, 42, 0.1); color: var(--bad); }
+    .app {
+      display: grid;
+      grid-template-columns: minmax(180px, 1fr) minmax(0, 1.25fr) auto;
+      gap: 12px;
+      align-items: start;
+      padding-block: 9px;
+      border-bottom: 1px solid var(--soft);
+    }
 
-    .small { color: var(--muted); font-size: 13px; }
-    .arrow { font-size: 22px; line-height: 1; color: var(--accent); }
-    .empty { padding: 28px; border: 1px dashed var(--line); border-radius: 24px; color: var(--muted); }
+    .app:hover { background: #fafafa; }
+    .app:last-child { border-bottom: 0; }
 
-    @media (max-width: 680px) {
-      main { width: min(100% - 24px, 1120px); padding: 32px 0; }
-      .bar { grid-template-columns: 1fr; }
-      .card { min-height: 190px; }
+    .cell { min-width: 0; }
+    .state { color: var(--state); font-weight: 700; text-align: right; text-transform: uppercase; }
+    .host { overflow-wrap: anywhere; font-weight: 700; }
+    .title { color: var(--muted); }
+
+    .empty {
+      margin: 0;
+      padding: 18px clamp(12px, 2vw, 24px);
+      border-bottom: 1px solid var(--soft);
+      color: var(--muted);
+    }
+
+    @media (max-width: 760px) {
+      .frame { width: 100%; min-height: 100vh; margin: 0; border-inline: 0; }
+      .app { grid-template-columns: 1fr; }
+      .app { gap: 2px; }
+      .state { text-align: left; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <span class="eyebrow"><span class="dot"></span> Daily subdomain scan</span>
-    <h1>Everything on thite.site.</h1>
-    <p class="lede">A living, low-drama index of the apps hanging off this domain. The robot checks certificate transparency and refreshes the list once a day.</p>
+  <main class="frame">
+    <header class="hero" aria-labelledby="title">
+      <h1 id="title">thite.site — The Thite platform</h1>
+    </header>
 
-    <div class="bar">
-      <input id="search" type="search" placeholder="Search apps, hosts, titles…" autocomplete="off">
-      <select id="state">
-        <option value="all">All statuses</option>
-        <option value="online">Online</option>
-        <option value="protected">Protected</option>
-        <option value="offline">Offline</option>
-      </select>
-    </div>
-
-    <div class="meta" id="meta">Loading scan…</div>
-    <section class="grid" id="apps" aria-live="polite"></section>
+    <section id="apps" aria-live="polite">
+      <div class="empty">Loading…</div>
+    </section>
   </main>
 
   <script>
     const apps = document.querySelector('#apps');
-    const meta = document.querySelector('#meta');
-    const search = document.querySelector('#search');
-    const state = document.querySelector('#state');
-    let rows = [];
 
     const esc = (value = '') => String(value).replace(/[&<>"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
-    const niceDate = value => value ? new Date(value).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' }) : 'unknown';
+    const labels = { online: 'open', protected: 'locked', offline: 'cold' };
+    const colors = { online: 'var(--online)', protected: 'var(--protected)', offline: 'var(--offline)' };
 
-    function render() {
-      const query = search.value.trim().toLowerCase();
-      const wanted = state.value;
-      const visible = rows.filter(row => {
-        const haystack = [row.host, row.title, row.description].join(' ').toLowerCase();
-        return (!query || haystack.includes(query)) && (wanted === 'all' || row.state === wanted);
-      });
-
-      meta.innerHTML = [
-        `<span>${visible.length} of ${rows.length} apps shown</span>`,
-        `<span>Last scan: ${esc(niceDate(window.scanGeneratedAt))}</span>`,
-        window.scanWarnings ? `<span>${esc(window.scanWarnings)} source warning${window.scanWarnings === 1 ? '' : 's'}</span>` : ''
-      ].filter(Boolean).join('');
-
-      apps.innerHTML = visible.length ? visible.map(row => `
-        <a class="card" href="${esc(row.url || `https://${row.host}`)}" target="_blank" rel="noreferrer">
-          <div>
-            <div class="topline">
-              <span class="pill ${esc(row.state)}">${esc(row.state)}</span>
-              <span class="small">${esc(row.status || '—')}</span>
-            </div>
-            <h2 class="host">${esc(row.title || row.host)}</h2>
-            <p class="desc">${esc(row.description || row.host)}</p>
-          </div>
-          <div class="foot">
-            <span class="small">${esc(row.host)} · ${esc((row.discovered_by || []).join(', ') || 'scan')}</span>
-            <span class="arrow">↗</span>
-          </div>
-        </a>
-      `).join('') : '<div class="empty">No apps match that filter.</div>';
+    function render(rows) {
+      apps.innerHTML = rows.length ? rows.map(row => {
+        const title = row.title && row.title !== row.host ? row.title : '';
+        const stateLabel = labels[row.state] || row.state || 'unknown';
+        return `
+          <a class="app" href="${esc(row.url || `https://${row.host}`)}" target="_blank" rel="noreferrer" style="--state:${colors[row.state] || 'var(--ink)'}">
+            <span class="cell host">${esc(row.host)}</span>
+            <span class="cell title">${esc(title)}</span>
+            <span class="cell state">${esc(stateLabel)}</span>
+          </a>
+        `;
+      }).join('') : '<div class="empty">No apps yet.</div>';
     }
 
     async function boot() {
@@ -245,18 +123,14 @@
         const response = await fetch('data/subdomains.json', { cache: 'no-store' });
         if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
         const data = await response.json();
-        window.scanGeneratedAt = data.generated_at;
-        window.scanWarnings = (data.source_errors || []).length;
-        rows = (data.hosts || []).slice().sort((a, b) => a.host.localeCompare(b.host));
-        render();
+        render((data.hosts || [])
+          .slice()
+          .sort((a, b) => a.host.localeCompare(b.host)));
       } catch (error) {
-        meta.textContent = 'Scan data is not available yet.';
-        apps.innerHTML = `<div class="empty">Could not load <code>data/subdomains.json</code>: ${esc(error.message)}</div>`;
+        apps.innerHTML = `<div class="empty">data/subdomains.json failed: ${esc(error.message)}</div>`;
       }
     }
 
-    search.addEventListener('input', render);
-    state.addEventListener('change', render);
     boot();
   </script>
 </body>
