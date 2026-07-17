@@ -4,118 +4,209 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>thite.site</title>
-  <meta name="description" content="Apps on thite.site.">
+  <meta name="description" content="People and applications on thite.site.">
   <link rel="icon" href="data:,">
   <style>
     :root {
       color-scheme: light;
-      --ink: #253142;
-      --muted: #737d8c;
-      --paper: #fff;
-      --field: #fff;
-      --line: #d7dee8;
-      --soft: #edf1f5;
-      --online: #3d7f79;
-      --protected: #6878a8;
-      --offline: #858d99;
+      --ink: #2d251e;
+      --muted: #716657;
+      --paper: #fbf8ef;
+      --field: #f1eadc;
+      --line: #d8c8aa;
+      --soft-line: rgba(138, 108, 68, .18);
+      --host-col: minmax(220px, .82fr);
+      --state-col: 76px;
+      --open: #456f44;
+      --locked: #675c95;
+      --cold: #77746d;
     }
 
     * { box-sizing: border-box; }
 
+    html { background: var(--field); }
+
     body {
       margin: 0;
-      background: var(--field);
+      background:
+        radial-gradient(circle at 14% 8%, rgba(255, 255, 255, .72), transparent 28rem),
+        linear-gradient(90deg, rgba(112, 82, 42, .022) 1px, transparent 1px),
+        linear-gradient(var(--paper), var(--field));
+      background-size: auto, 30px 30px, auto;
       color: var(--ink);
-      font: 12px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font: 18px/1.54 "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      text-rendering: optimizeLegibility;
     }
 
     a { color: inherit; text-decoration: none; }
 
-    .frame {
-      width: min(1180px, calc(100% - 24px));
-      margin: 18px auto;
-      border: 1px solid var(--line);
-      background: var(--paper);
+    .page {
+      width: min(1000px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(36px, 7vw, 82px) 0 76px;
     }
-
-    .hero,
-    .app { padding-inline: clamp(12px, 2vw, 24px); }
 
     .hero {
-      padding-block: 14px;
-      border-bottom: 1px solid var(--soft);
+      margin-bottom: clamp(42px, 7vw, 72px);
+      padding-bottom: clamp(20px, 4vw, 34px);
+      border-bottom: 1px solid var(--line);
     }
 
+    h1, h2, p { margin-top: 0; }
+
     h1 {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.15;
-      letter-spacing: .02em;
-      text-transform: uppercase;
+      margin-bottom: 0;
+      font-size: clamp(3.4rem, 13vw, 8rem);
+      line-height: .82;
+      letter-spacing: -.065em;
+      font-weight: 500;
     }
+
+    .group + .group { margin-top: clamp(46px, 8vw, 84px); }
+
+    .group-head {
+      display: grid;
+      grid-template-columns: var(--host-col) minmax(0, 1fr) var(--state-col);
+      gap: clamp(14px, 3vw, 30px);
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(1.9rem, 5vw, 3.3rem);
+      line-height: .95;
+      letter-spacing: -.04em;
+      font-weight: 500;
+    }
+
+    .group-note {
+      margin-bottom: 0;
+      color: var(--muted);
+      max-width: 42ch;
+    }
+
+    .apps { border-top: 1px solid var(--line); }
 
     .app {
       display: grid;
-      grid-template-columns: minmax(180px, 1fr) minmax(0, 1.25fr) auto;
-      gap: 12px;
-      align-items: start;
-      padding-block: 9px;
-      border-bottom: 1px solid var(--soft);
+      grid-template-columns: var(--host-col) minmax(0, 1fr) var(--state-col);
+      gap: clamp(14px, 3vw, 30px);
+      align-items: baseline;
+      padding: .86rem 0;
+      border-bottom: 1px solid var(--soft-line);
     }
 
-    .app:hover { background: #fafafa; }
-    .app:last-child { border-bottom: 0; }
+    .app:hover,
+    .app:focus-visible {
+      background: rgba(255, 252, 244, .5);
+      outline: 0;
+    }
 
-    .cell { min-width: 0; }
-    .state { color: var(--state); font-weight: 700; text-align: right; text-transform: uppercase; }
-    .host { overflow-wrap: anywhere; font-weight: 700; }
-    .title { color: var(--muted); }
+    .host {
+      overflow-wrap: anywhere;
+      font-weight: 600;
+    }
+
+    .note { color: var(--muted); }
+    .state { color: var(--state); text-align: right; white-space: nowrap; }
 
     .empty {
       margin: 0;
-      padding: 18px clamp(12px, 2vw, 24px);
-      border-bottom: 1px solid var(--soft);
+      padding: 1rem 0;
       color: var(--muted);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--soft-line);
     }
 
-    @media (max-width: 760px) {
-      .frame { width: 100%; min-height: 100vh; margin: 0; border-inline: 0; }
-      .app { grid-template-columns: 1fr; }
-      .app { gap: 2px; }
+    @media (max-width: 680px) {
+      body { font-size: 17px; }
+      .page {
+        width: calc(100% - 32px);
+        padding-top: 24px;
+      }
+      .group-head,
+      .app {
+        grid-template-columns: 1fr;
+      }
+      .hero { margin-bottom: 34px; }
+      .group-head { gap: 6px; margin-bottom: .8rem; }
+      .app { gap: .08rem; }
       .state { text-align: left; }
     }
   </style>
 </head>
 <body>
-  <main class="frame">
+  <main class="page">
     <header class="hero" aria-labelledby="title">
-      <h1 id="title">thite.site — The Thite platform</h1>
+      <h1 id="title">thite.site</h1>
     </header>
 
-    <section id="apps" aria-live="polite">
-      <div class="empty">Loading…</div>
+    <section class="group" aria-labelledby="applications-title">
+      <div class="group-head">
+        <h2 id="applications-title">Applications</h2>
+        <p class="group-note">Projects, libraries, boards, and small tools that answer from thite.site hosts.</p>
+      </div>
+      <div id="applications" class="apps" aria-live="polite"><p class="empty">Loading applications…</p></div>
+    </section>
+
+    <section class="group" aria-labelledby="people-title">
+      <div class="group-head">
+        <h2 id="people-title">People</h2>
+        <p class="group-note">Personal pages and family profile links kept close to the domain name.</p>
+      </div>
+      <div id="people" class="apps" aria-live="polite"><p class="empty">Loading people…</p></div>
     </section>
   </main>
 
   <script>
-    const apps = document.querySelector('#apps');
+    const people = document.querySelector('#people');
+    const applications = document.querySelector('#applications');
 
-    const esc = (value = '') => String(value).replace(/[&<>"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[char]));
+    const personNames = new Set(['anika', 'anish', 'mahesh', 'sheetal']);
     const labels = { online: 'open', protected: 'locked', offline: 'cold' };
-    const colors = { online: 'var(--online)', protected: 'var(--protected)', offline: 'var(--offline)' };
+    const colors = { online: 'var(--open)', protected: 'var(--locked)', offline: 'var(--cold)' };
+    const notes = {
+      'board.thite.site': 'A protected board behind Cloudflare Access.',
+      'lib.thite.site': 'The shorter path into Anish’s library.',
+      'library.thite.site': 'A full-name mirror for the same library.',
+      'links.thite.site': 'A personal link board.',
+      'make-api.thite.site': 'The API host for Spanner Projects.',
+      'make.thite.site': 'The web app for Spanner Projects.',
+      'mom2026.thite.site': 'A small Mother’s Day page.',
+      'thite.site': 'The root index you are reading.'
+    };
 
-    function render(rows) {
-      apps.innerHTML = rows.length ? rows.map(row => {
-        const title = row.title && row.title !== row.host ? row.title : '';
+    const esc = (value = '') => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+    const prefix = host => String(host || '').split('.')[0];
+    const isPerson = row => personNames.has(prefix(row.host));
+
+    function rowNote(row) {
+      if (notes[row.host]) return notes[row.host];
+      if (isPerson(row)) return row.title && row.title !== row.host ? row.title : `A profile link for ${prefix(row.host)}.`;
+      return row.description || (row.title && row.title !== row.host ? row.title : 'An application host on this domain.');
+    }
+
+    function renderList(node, rows, empty) {
+      node.innerHTML = rows.length ? rows.map(row => {
         const stateLabel = labels[row.state] || row.state || 'unknown';
         return `
           <a class="app" href="${esc(row.url || `https://${row.host}`)}" target="_blank" rel="noreferrer" style="--state:${colors[row.state] || 'var(--ink)'}">
-            <span class="cell host">${esc(row.host)}</span>
-            <span class="cell title">${esc(title)}</span>
-            <span class="cell state">${esc(stateLabel)}</span>
+            <span class="host">${esc(row.host)}</span>
+            <span class="note">${esc(rowNote(row))}</span>
+            <span class="state">${esc(stateLabel)}</span>
           </a>
         `;
-      }).join('') : '<div class="empty">No apps yet.</div>';
+      }).join('') : `<p class="empty">${empty}</p>`;
+    }
+
+    function render(rows) {
+      const grouped = rows.reduce((sets, row) => {
+        sets[isPerson(row) ? 'people' : 'applications'].push(row);
+        return sets;
+      }, { people: [], applications: [] });
+      renderList(people, grouped.people, 'No people yet.');
+      renderList(applications, grouped.applications, 'No applications yet.');
     }
 
     async function boot() {
@@ -123,11 +214,10 @@
         const response = await fetch('data/subdomains.json', { cache: 'no-store' });
         if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
         const data = await response.json();
-        render((data.hosts || [])
-          .slice()
-          .sort((a, b) => a.host.localeCompare(b.host)));
+        render((data.hosts || []).slice().sort((a, b) => a.host.localeCompare(b.host)));
       } catch (error) {
-        apps.innerHTML = `<div class="empty">data/subdomains.json failed: ${esc(error.message)}</div>`;
+        people.innerHTML = `<p class="empty">data/subdomains.json failed: ${esc(error.message)}</p>`;
+        applications.innerHTML = '';
       }
     }
 

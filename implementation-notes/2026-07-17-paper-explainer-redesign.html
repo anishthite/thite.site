@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spec — paper-explainer-redesign</title>
+<meta name="task" content="Remake the static index as a serif interactive technical explainer">
+<meta name="date-started" content="2026-07-17">
+<meta name="date-updated" content="2026-07-17">
+<meta name="status" content="superseded">
+<meta name="blast-radius" content="low">
+<meta name="tags" content="static-site, ui, explainer">
+<meta name="related" content="2026-07-08-ledger-sheet-restyle.html,2026-07-08-living-subdomain-index.html">
+<style>
+  body { font: 14px/1.45 -apple-system, system-ui, sans-serif; max-width: 880px; margin: 1.5rem auto; padding: 0 1rem; color: #111; }
+  h1 { font-size: 20px; margin: 0 0 .25rem; }
+  h2 { font-size: 15px; margin: 1.4rem 0 .4rem; border-bottom: 1px solid #ddd; padding-bottom: .2rem; }
+  table { border-collapse: collapse; width: 100%; margin: .4rem 0 .8rem; }
+  th, td { border: 1px solid #ddd; padding: 4px 8px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; font-weight: 600; }
+  code, pre { font-family: ui-monospace, Menlo, monospace; }
+  code { background: #f1f1f1; padding: 1px 4px; border-radius: 3px; font-size: 12.5px; }
+  ul, ol { margin: .3rem 0 .8rem 1.2rem; padding: 0; }
+  li { margin: .15rem 0; }
+  .blast-low { color: #2a7a2a; }
+  .meta { color: #555; font-size: 12.5px; margin-bottom: .8rem; }
+  .kv { display: grid; grid-template-columns: 140px 1fr; gap: 2px 14px; font-size: 13px; margin: .4rem 0 1rem; }
+  .kv b { color: #444; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>Serif paper explainer redesign</h1>
+<p class="meta"><code>main</code> · worktree <code>/Users/anishthite/workspace/thite.site</code> · 2026-07-17 · status <b>superseded</b> · blast <span class="blast-low">low</span></p>
+
+<h2>Summary</h2>
+<div class="kv">
+  <b>Goal</b><div>Remake <code>index.html</code> as one readable interactive explainer for the subdomain scan model.</div>
+  <b>Source</b><div><code>data/subdomains.json</code> and <code>scripts/scan_subdomains.py</code>.</div>
+  <b>Surface</b><div><code>/index.html</code> only.</div>
+  <b>Schema</b><div>None.</div>
+  <b>Mobile</b><div>Diagram appears before prose; dense layouts collapse to one column.</div>
+  <b>Open Qs</b><div>0.</div>
+</div>
+
+<h2>Algorithm</h2>
+<ol>
+  <li>Load <code>data/subdomains.json</code>; count host sources, states, and probe rows.</li>
+  <li>Model probe budget as <code>Tmax ≈ ceil(N / w) · 2τ</code> to reflect HTTPS then HTTP fallback.</li>
+  <li>Update diagram labels, equations, glossary cards, and host rows from one in-page data object.</li>
+</ol>
+
+<h2>UI layout</h2>
+<ol>
+  <li><b>Story</b>: linear sections move from names to DNS to probes to the reduced three-state model.</li>
+  <li><b>Diagram</b>: one SVG pipeline marks the section in view and shows live counts.</li>
+  <li><b>Math</b>: three equations use clickable terms and a persistent glossary.</li>
+  <li><b>Controls</b>: two native sliders tune timeout and worker count for the probe-budget model.</li>
+</ol>
+
+<h2>Files</h2>
+<table>
+  <tr><th>Path</th><th>Kind</th><th>Delta</th></tr>
+  <tr><td><code>index.html</code></td><td>touch</td><td>Replace ledger list with one serif interactive explainer and host appendix.</td></tr>
+  <tr><td><code>implementation-notes/2026-07-17-paper-explainer-redesign.html</code></td><td>new</td><td>Record scope, model, and review gates.</td></tr>
+  <tr><td><code>implementation-notes/INDEX.html</code></td><td>touch</td><td>Add this task to the notes index.</td></tr>
+</table>
+
+<h2>Decisions</h2>
+<table>
+  <tr><th>ID</th><th>Choice · Rationale</th></tr>
+  <tr><td>D-001</td><td>Explain the scanner instead of inventing an unrelated artifact. The repo already contains a live subdomain model.</td></tr>
+  <tr><td>D-002</td><td>Keep all CSS and JavaScript in <code>index.html</code>. The site has no build step.</td></tr>
+  <tr><td>D-003</td><td>Use HTML math instead of a TeX dependency. The equations are short and static.</td></tr>
+</table>
+
+<h2>Deviations</h2>
+<table>
+  <tr><th>ID</th><th>From spec · Did · Reason</th></tr>
+  <tr><td>X-001</td><td>Agent review returned <code>null</code> results; used local syntax, mobile, interaction, and visual checks; no usable model output was available.</td></tr>
+</table>
+
+<h2>Tradeoffs</h2>
+<table>
+  <tr><th>ID</th><th>Picked over Rejected · Reason</th></tr>
+  <tr><td>T-001</td><td>Probe-budget model over broad DNS textbook. One tuneable model fits the existing data.</td></tr>
+  <tr><td>T-002</td><td>Source links over generated bibliography tooling. Static citations need no dependency.</td></tr>
+</table>
+
+<h2>Assumptions</h2>
+<ul>
+  <li>A-001 · “Design” refers to the homepage, not a separate artifact. If wrong: the same style can move to another page.</li>
+</ul>
+
+<h2>Reversibility</h2>
+<p>R-001 · <span class="blast-low">low</span>. Revert <code>index.html</code>, this note, and the notes index row.</p>
+<p>R-002 · <span class="blast-low">low</span>. Superseded by <code>2026-07-17-paper-index-restyle.html</code> after user asked to restore the app index and drop explanations.</p>
+
+<h2>Definition of done</h2>
+<ul>
+  <li><code>index.html</code> uses one serif visual system and no new dependency.</li>
+  <li>Clickable terms, citation tooltips, glossary entries, controls, and host links work.</li>
+  <li>Mobile viewport around <code>390px</code> has no page-wide horizontal scroll.</li>
+  <li>Screenshots exist at <code>output/playwright/thite-site-paper-explainer-mobile.png</code> and <code>output/playwright/thite-site-paper-explainer-desktop.png</code>.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spec — paper-index-restyle</title>
+<meta name="task" content="Restore app index content with serif paper styling">
+<meta name="date-started" content="2026-07-17">
+<meta name="date-updated" content="2026-07-17">
+<meta name="status" content="shipped">
+<meta name="blast-radius" content="low">
+<meta name="tags" content="static-site, ui, index, paper">
+<meta name="related" content="2026-07-17-paper-explainer-redesign.html,2026-07-08-ledger-sheet-restyle.html">
+<style>
+  body { font: 14px/1.45 -apple-system, system-ui, sans-serif; max-width: 880px; margin: 1.5rem auto; padding: 0 1rem; color: #111; }
+  h1 { font-size: 20px; margin: 0 0 .25rem; }
+  h2 { font-size: 15px; margin: 1.4rem 0 .4rem; border-bottom: 1px solid #ddd; padding-bottom: .2rem; }
+  table { border-collapse: collapse; width: 100%; margin: .4rem 0 .8rem; }
+  th, td { border: 1px solid #ddd; padding: 4px 8px; text-align: left; vertical-align: top; }
+  th { background: #f6f6f6; font-weight: 600; }
+  code { font-family: ui-monospace, Menlo, monospace; background: #f1f1f1; padding: 1px 4px; border-radius: 3px; font-size: 12.5px; }
+  ul, ol { margin: .3rem 0 .8rem 1.2rem; padding: 0; }
+  li { margin: .15rem 0; }
+  .blast-low { color: #2a7a2a; }
+  .meta { color: #555; font-size: 12.5px; margin-bottom: .8rem; }
+  .kv { display: grid; grid-template-columns: 140px 1fr; gap: 2px 14px; font-size: 13px; margin: .4rem 0 1rem; }
+  .kv b { color: #444; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>Paper app index restyle</h1>
+<p class="meta"><code>main</code> · worktree <code>/Users/anishthite/workspace/thite.site</code> · 2026-07-17 · status <b>shipped</b> · blast <span class="blast-low">low</span></p>
+
+<h2>Summary</h2>
+<div class="kv">
+  <b>Goal</b><div>Restore the app index content while keeping the requested serif paper visual style.</div>
+  <b>Source</b><div><code>data/subdomains.json</code> remains the only data source.</div>
+  <b>Surface</b><div><code>/index.html</code> only.</div>
+  <b>Schema</b><div>None.</div>
+  <b>Mobile</b><div>Rows collapse to host, title, state.</div>
+  <b>Open Qs</b><div>0.</div>
+</div>
+
+<h2>UI layout</h2>
+<ol>
+  <li><b>Header</b>: <code>thite.site</code> title plus live app count.</li>
+  <li><b>Rows</b>: host, title or description, and state label.</li>
+  <li><b>Style</b>: one Palatino-style serif system over a calm paper field.</li>
+</ol>
+
+<h2>Files</h2>
+<table>
+  <tr><th>Path</th><th>Kind</th><th>Delta</th></tr>
+  <tr><td><code>index.html</code></td><td>touch</td><td>Replace explainer sections with the simple app index in paper styling.</td></tr>
+  <tr><td><code>implementation-notes/2026-07-17-paper-index-restyle.html</code></td><td>new</td><td>Record the user pivot back to the app index.</td></tr>
+  <tr><td><code>implementation-notes/INDEX.html</code></td><td>touch</td><td>Add this task and mark the explainer note superseded.</td></tr>
+</table>
+
+<h2>Decisions</h2>
+<table>
+  <tr><th>ID</th><th>Choice · Rationale</th></tr>
+  <tr><td>D-001</td><td>Delete the explainer, equations, glossary, citations, and diagram. The user asked to ignore the explanations.</td></tr>
+  <tr><td>D-002</td><td>Keep the previous app-index data shape. It is the page purpose the user wanted back.</td></tr>
+</table>
+
+<h2>Tradeoffs</h2>
+<table>
+  <tr><th>ID</th><th>Picked over Rejected · Reason</th></tr>
+  <tr><td>T-001</td><td>Simple index over interactive textbook. Matches the correction with less code.</td></tr>
+</table>
+
+<h2>Reversibility</h2>
+<p>R-001 · <span class="blast-low">low</span>. Revert <code>index.html</code>, this note, and the notes index row.</p>
+
+<h2>Definition of done</h2>
+<ul>
+  <li><code>index.html</code> lists apps from <code>data/subdomains.json</code>.</li>
+  <li>One serif visual system remains in the visible page.</li>
+  <li>Mobile viewport around <code>390px</code> has no page-wide horizontal scroll.</li>
+  <li>Screenshot exists under <code>output/playwright/</code>.</li>
+</ul>
+</body>
+</html>
