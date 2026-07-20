@@ -7,6 +7,14 @@
   <meta name="description" content="People and applications on thite.site.">
   <link rel="icon" href="data:,">
   <style>
+    @font-face {
+      font-family: "ET Book Bold Line Figures";
+      src: url("assets/fonts/et-book-bold-line-figures.woff") format("woff");
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+    }
+
     :root {
       color-scheme: light;
       --ink: #2d251e;
@@ -34,7 +42,9 @@
         linear-gradient(var(--paper), var(--field));
       background-size: auto, 30px 30px, auto;
       color: var(--ink);
-      font: 18px/1.54 "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      font: 18px/1.54 "ET Book Bold Line Figures", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      font-kerning: normal;
+      font-feature-settings: "kern" 1;
       text-rendering: optimizeLegibility;
     }
 
@@ -58,8 +68,10 @@
       margin-bottom: 0;
       font-size: clamp(3.4rem, 13vw, 8rem);
       line-height: .82;
-      letter-spacing: -.065em;
-      font-weight: 500;
+      letter-spacing: -.025em;
+      font-kerning: normal;
+      font-feature-settings: "kern" 1;
+      font-weight: 400;
     }
 
     .group + .group { margin-top: clamp(46px, 8vw, 84px); }
@@ -76,8 +88,8 @@
       margin-bottom: 0;
       font-size: clamp(1.9rem, 5vw, 3.3rem);
       line-height: .95;
-      letter-spacing: -.04em;
-      font-weight: 500;
+      letter-spacing: -.01em;
+      font-weight: 400;
     }
 
     .group-note {
@@ -105,7 +117,7 @@
 
     .host {
       overflow-wrap: anywhere;
-      font-weight: 600;
+      font-weight: 400;
     }
 
     .note { color: var(--muted); }
