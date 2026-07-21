@@ -8,10 +8,18 @@
   <link rel="icon" href="data:,">
   <style>
     @font-face {
-      font-family: "ET Book Bold Line Figures";
-      src: url("assets/fonts/et-book-bold-line-figures.woff") format("woff");
+      font-family: "et-book";
+      src: url("assets/fonts/et-book-roman-line-figures.woff") format("woff");
       font-style: normal;
       font-weight: 400;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "et-book";
+      src: url("assets/fonts/et-book-bold-line-figures.woff") format("woff");
+      font-style: normal;
+      font-weight: 700;
       font-display: swap;
     }
 
@@ -42,7 +50,7 @@
         linear-gradient(var(--paper), var(--field));
       background-size: auto, 30px 30px, auto;
       color: var(--ink);
-      font: 16px/1.56 "ET Book Bold Line Figures", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+      font: 17px/1.56 et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
       font-kerning: normal;
       font-feature-settings: "kern" 1;
       text-rendering: optimizeLegibility;
@@ -117,7 +125,7 @@
 
     .host {
       overflow-wrap: anywhere;
-      font-weight: 400;
+      font-weight: 700;
     }
 
     .note { color: var(--muted); }

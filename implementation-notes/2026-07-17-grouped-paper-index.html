@@ -52,7 +52,8 @@
 <table>
   <tr><th>Path</th><th>Kind</th><th>Delta</th></tr>
   <tr><td><code>index.html</code></td><td>touch</td><td>Remove card frame and render grouped paper index.</td></tr>
-  <tr><td><code>assets/fonts/et-book-bold-line-figures.woff</code></td><td>new</td><td>Self-host requested ET Book bold line figures webfont.</td></tr>
+  <tr><td><code>assets/fonts/et-book-roman-line-figures.woff</code></td><td>new</td><td>Self-host ET Book roman line figures webfont.</td></tr>
+  <tr><td><code>assets/fonts/et-book-bold-line-figures.woff</code></td><td>new</td><td>Self-host ET Book bold line figures webfont.</td></tr>
   <tr><td><code>implementation-notes/2026-07-17-grouped-paper-index.html</code></td><td>new</td><td>Record this grouping/header refinement.</td></tr>
   <tr><td><code>implementation-notes/INDEX.html</code></td><td>touch</td><td>Add this task row.</td></tr>
 </table>
@@ -69,6 +70,8 @@
   <tr><td>D-007</td><td>Self-host the requested <code>et-book-bold-line-figures.woff</code>. Avoids relying on GitHub raw URLs at runtime.</td></tr>
   <tr><td>D-008</td><td>Relax ET Book heading tracking and enable kerning globally. The font looked cramped with Palatino-era negative spacing.</td></tr>
   <tr><td>D-009</td><td>Reduce base type from <code>18px</code> to <code>16px</code>. Row text around hosts like <code>board.thite.site</code> read oversized.</td></tr>
+  <tr><td>D-010</td><td>Switch from bold ET Book to roman ET Book at <code>17px</code>. Supersedes D-007/D-009 for readability.</td></tr>
+  <tr><td>D-011</td><td>Use one <code>et-book</code> family with roman <code>400</code> and bold <code>700</code>. Matches <code>ai-2040.com</code> font loading while keeping reading text roman.</td></tr>
 </table>
 
 <h2>Tradeoffs</h2>
