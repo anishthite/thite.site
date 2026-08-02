@@ -1,10 +1,10 @@
 {
   "count": 14,
   "domain": "thite.site",
-  "generated_at": "2026-08-01T10:48:56Z",
+  "generated_at": "2026-08-02T10:50:21Z",
   "hosts": [
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:29Z",
       "description": "People and applications on thite.site.",
       "discovered_by": [
         "certspotter"
@@ -25,7 +25,7 @@
       "url": "https://thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:29Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -46,7 +46,7 @@
       "url": "https://anika.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:29Z",
       "description": "Anish Thite builds small tools, agent workflows, interactive explainers, and AI-adjacent web experiments.",
       "discovered_by": [
         "manual"
@@ -67,7 +67,7 @@
       "url": "https://anish.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:29Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -88,7 +88,7 @@
       "url": "https://board.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:29Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -109,7 +109,7 @@
       "url": "https://curius-graph.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:29Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -130,7 +130,7 @@
       "url": "https://curius-links.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:29Z",
       "description": "A curated collection of knowledge, wisdom, and discovery",
       "discovered_by": [
         "certspotter"
@@ -151,7 +151,7 @@
       "url": "https://lib.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:29Z",
       "description": "A curated collection of knowledge, wisdom, and discovery",
       "discovered_by": [
         "certspotter"
@@ -172,7 +172,7 @@
       "url": "https://library.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:30Z",
       "description": "Personal link board.",
       "discovered_by": [
         "certspotter"
@@ -193,7 +193,7 @@
       "url": "https://links.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:30Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -214,7 +214,7 @@
       "url": "https://mahesh.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:30Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -235,7 +235,7 @@
       "url": "https://make-api.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:30Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -244,8 +244,8 @@
       "final_url": "https://make.thite.site",
       "host": "make.thite.site",
       "ips": [
-        "216.150.1.1",
-        "216.150.16.1"
+        "216.150.1.129",
+        "216.150.16.129"
       ],
       "protocol": "https",
       "state": "online",
@@ -254,7 +254,7 @@
       "url": "https://make.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:30Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -273,13 +273,13 @@
       "url": "https://mom2026.thite.site"
     },
     {
-      "checked_at": "2026-08-01T10:48:57Z",
+      "checked_at": "2026-08-02T10:50:30Z",
       "description": "",
       "discovered_by": [
         "manual"
       ],
       "error": "",
-      "final_url": "https://www.linkedin.com/in/sheetal-thite-98a3909",
+      "final_url": "https://www.linkedin.com/in/sheetal-thite-98a3909/",
       "host": "sheetal.thite.site",
       "ips": [
         "104.21.52.152",
@@ -294,5 +294,9 @@
       "url": "https://sheetal.thite.site"
     }
   ],
-  "source_errors": []
+  "source_errors": [
+    "certspotter: HTTPError: HTTP Error 503: Service Unavailable",
+    "crt.sh: TimeoutError: The read operation timed out",
+    "using previous scan"
+  ]
 }
