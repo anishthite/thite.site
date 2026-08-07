@@ -1,10 +1,10 @@
 {
   "count": 14,
   "domain": "thite.site",
-  "generated_at": "2026-08-06T11:33:10Z",
+  "generated_at": "2026-08-07T10:10:35Z",
   "hosts": [
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:35Z",
       "description": "People and applications on thite.site.",
       "discovered_by": [
         "certspotter"
@@ -25,7 +25,7 @@
       "url": "https://thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:35Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -46,7 +46,7 @@
       "url": "https://anika.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:35Z",
       "description": "Anish Thite builds small tools, agent workflows, interactive explainers, and AI-adjacent web experiments.",
       "discovered_by": [
         "manual"
@@ -67,7 +67,7 @@
       "url": "https://anish.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:35Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -88,7 +88,7 @@
       "url": "https://board.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:35Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -109,7 +109,7 @@
       "url": "https://curius-graph.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:35Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -130,7 +130,7 @@
       "url": "https://curius-links.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:35Z",
       "description": "A curated collection of knowledge, wisdom, and discovery",
       "discovered_by": [
         "certspotter"
@@ -151,7 +151,7 @@
       "url": "https://lib.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:35Z",
       "description": "A curated collection of knowledge, wisdom, and discovery",
       "discovered_by": [
         "certspotter"
@@ -172,7 +172,7 @@
       "url": "https://library.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:36Z",
       "description": "Personal link board.",
       "discovered_by": [
         "certspotter"
@@ -193,7 +193,7 @@
       "url": "https://links.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:36Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -214,7 +214,7 @@
       "url": "https://mahesh.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:36Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -235,7 +235,7 @@
       "url": "https://make-api.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:36Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -254,7 +254,7 @@
       "url": "https://make.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:36Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -273,13 +273,13 @@
       "url": "https://mom2026.thite.site"
     },
     {
-      "checked_at": "2026-08-06T11:33:10Z",
+      "checked_at": "2026-08-07T10:10:36Z",
       "description": "",
       "discovered_by": [
         "manual"
       ],
       "error": "",
-      "final_url": "https://www.linkedin.com/in/sheetal-thite-98a3909",
+      "final_url": "https://www.linkedin.com/in/sheetal-thite-98a3909/",
       "host": "sheetal.thite.site",
       "ips": [
         "104.21.52.152",
