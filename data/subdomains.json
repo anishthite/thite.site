@@ -1,10 +1,10 @@
 {
-  "count": 15,
+  "count": 17,
   "domain": "thite.site",
-  "generated_at": "2026-08-17T09:57:25Z",
+  "generated_at": "2026-08-18T09:48:21Z",
   "hosts": [
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "People and applications on thite.site.",
       "discovered_by": [
         "certspotter"
@@ -25,7 +25,7 @@
       "url": "https://thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -46,7 +46,7 @@
       "url": "https://anika.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "Anish Thite builds small tools, agent workflows, interactive explainers, and AI-adjacent web experiments.",
       "discovered_by": [
         "manual"
@@ -67,7 +67,7 @@
       "url": "https://anish.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -88,7 +88,7 @@
       "url": "https://board.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -109,7 +109,7 @@
       "url": "https://curius-graph.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -130,7 +130,28 @@
       "url": "https://curius-links.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
+      "description": "",
+      "discovered_by": [
+        "certspotter"
+      ],
+      "error": "",
+      "final_url": "https://figments.thite.site",
+      "host": "figments.thite.site",
+      "ips": [
+        "104.21.52.152",
+        "172.67.200.225",
+        "2606:4700:3032::ac43:c8e1",
+        "2606:4700:3033::6815:3498"
+      ],
+      "protocol": "https",
+      "state": "online",
+      "status": 404,
+      "title": "figments.thite.site",
+      "url": "https://figments.thite.site"
+    },
+    {
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "Thirty-six Python interview lessons, 108 coding challenges, a time-complexity quiz, and 177 system-design exercises.",
       "discovered_by": [
         "certspotter"
@@ -151,7 +172,7 @@
       "url": "https://leetcode.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "A curated collection of knowledge, wisdom, and discovery",
       "discovered_by": [
         "certspotter"
@@ -172,7 +193,7 @@
       "url": "https://lib.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "A curated collection of knowledge, wisdom, and discovery",
       "discovered_by": [
         "certspotter"
@@ -193,7 +214,7 @@
       "url": "https://library.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "Personal link board.",
       "discovered_by": [
         "certspotter"
@@ -214,7 +235,7 @@
       "url": "https://links.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -235,7 +256,7 @@
       "url": "https://mahesh.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -256,7 +277,7 @@
       "url": "https://make-api.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -265,8 +286,8 @@
       "final_url": "https://make.thite.site",
       "host": "make.thite.site",
       "ips": [
-        "216.150.1.193",
-        "216.150.16.193"
+        "216.150.1.1",
+        "216.150.16.1"
       ],
       "protocol": "https",
       "state": "online",
@@ -275,7 +296,7 @@
       "url": "https://make.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -284,8 +305,8 @@
       "final_url": "https://mom2026.thite.site",
       "host": "mom2026.thite.site",
       "ips": [
-        "216.150.1.193",
-        "216.150.16.193"
+        "216.150.1.129",
+        "216.150.16.129"
       ],
       "protocol": "https",
       "state": "online",
@@ -294,7 +315,28 @@
       "url": "https://mom2026.thite.site"
     },
     {
-      "checked_at": "2026-08-17T09:57:25Z",
+      "checked_at": "2026-08-18T09:48:22Z",
+      "description": "",
+      "discovered_by": [
+        "certspotter"
+      ],
+      "error": "",
+      "final_url": "https://night.thite.site",
+      "host": "night.thite.site",
+      "ips": [
+        "104.21.52.152",
+        "172.67.200.225",
+        "2606:4700:3032::ac43:c8e1",
+        "2606:4700:3033::6815:3498"
+      ],
+      "protocol": "https",
+      "state": "online",
+      "status": 404,
+      "title": "night.thite.site",
+      "url": "https://night.thite.site"
+    },
+    {
+      "checked_at": "2026-08-18T09:48:22Z",
       "description": "",
       "discovered_by": [
         "manual"
