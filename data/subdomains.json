@@ -1,10 +1,10 @@
 {
   "count": 25,
   "domain": "thite.site",
-  "generated_at": "2026-11-15T16:21:43Z",
+  "generated_at": "2026-11-16T19:36:51Z",
   "hosts": [
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "People and applications on thite.site.",
       "discovered_by": [
         "certspotter"
@@ -25,7 +25,7 @@
       "url": "https://thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -46,7 +46,7 @@
       "url": "https://anika.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "Anish Thite builds small tools, agent workflows, interactive explainers, and AI-adjacent web experiments.",
       "discovered_by": [
         "manual"
@@ -67,7 +67,7 @@
       "url": "https://anish.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -88,7 +88,7 @@
       "url": "https://blackjack.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -109,7 +109,7 @@
       "url": "https://board.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -123,14 +123,14 @@
         "2606:4700:3032::ac43:c8e1",
         "2606:4700:3033::6815:3498"
       ],
-      "protocol": "https",
+      "protocol": "http",
       "state": "protected",
       "status": 200,
       "title": "Sign in \u30fb Cloudflare Access",
-      "url": "https://changelog.thite.site"
+      "url": "http://changelog.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -151,7 +151,7 @@
       "url": "https://chess.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -172,7 +172,7 @@
       "url": "https://curius-graph.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:51Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -193,7 +193,7 @@
       "url": "https://curius-links.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -214,7 +214,7 @@
       "url": "https://dither-planet.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:47Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -235,7 +235,7 @@
       "url": "https://figments.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "Thirty-six Python interview lessons, 108 coding challenges, four interview quizzes, and 177 system-design exercises.",
       "discovered_by": [
         "certspotter"
@@ -256,7 +256,7 @@
       "url": "https://leetcode.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -277,7 +277,7 @@
       "url": "https://lib.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -298,7 +298,7 @@
       "url": "https://library.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "Personal link board.",
       "discovered_by": [
         "certspotter"
@@ -319,7 +319,7 @@
       "url": "https://links.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -340,7 +340,7 @@
       "url": "https://mahesh.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -361,7 +361,7 @@
       "url": "https://make-api.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -380,7 +380,7 @@
       "url": "https://make.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "A birthday matching game made with love.",
       "discovered_by": [
         "certspotter"
@@ -401,7 +401,7 @@
       "url": "https://mom.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -420,7 +420,7 @@
       "url": "https://mom2026.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "A quiet, procedural meteor shower viewed from beneath a dark summer sky.",
       "discovered_by": [
         "certspotter"
@@ -441,7 +441,7 @@
       "url": "https://night.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -462,7 +462,7 @@
       "url": "https://party.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -483,7 +483,7 @@
       "url": "https://photos.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:52Z",
       "description": "",
       "discovered_by": [
         "certspotter"
@@ -504,7 +504,7 @@
       "url": "https://poker.thite.site"
     },
     {
-      "checked_at": "2026-11-15T16:21:48Z",
+      "checked_at": "2026-11-16T19:36:53Z",
       "description": "",
       "discovered_by": [
         "manual"
@@ -525,9 +525,5 @@
       "url": "https://sheetal.thite.site"
     }
   ],
-  "source_errors": [
-    "certspotter: HTTPError: HTTP Error 503: Service Unavailable",
-    "crt.sh: HTTPError: HTTP Error 404: Not Found",
-    "using previous scan"
-  ]
+  "source_errors": []
 }
